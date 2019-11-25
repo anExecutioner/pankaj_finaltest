@@ -1,0 +1,31 @@
+mysql> SELECT * FROM EMPLOYEE;
++--------+------------+---------+---------+-----------+
+| Emp_id | Emp_name   | salary  | Dept_id | phone     |
++--------+------------+---------+---------+-----------+
+|      1 | pankaj     |  300000 |       1 | 123456789 |
+|      2 | anil       |  450000 |       2 | 864384687 |
+|      3 | pushpendra |  200000 |       3 |  39249934 |
+|      4 | vulture    |  600000 |       2 |  39243334 |
+|      5 | shadow     | 1500000 |       1 |  39223434 |
++--------+------------+---------+---------+-----------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPARTMENT;
++---------+------------+
+| Dept_id | Dept_name  |
++---------+------------+
+|       1 | developers |
+|       2 | testing    |
+|       3 | deployment |
++---------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select avg(salary) as salary from employee inner join department on employee.dept_id = department.dept_id group by department.dept_id;
++-------------+
+| salary      |
++-------------+
+| 900000.0000 |
+| 525000.0000 |
+| 200000.0000 |
++-------------+
+3 rows in set (0.00 sec)

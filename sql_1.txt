@@ -1,0 +1,11 @@
+mysql> select Emp_name,Dept_name from employee inner join department on employee.Dept_id = department.Dept_id where department.Dept_id in (1,2,3);
++------------+------------+
+| Emp_name   | Dept_name  |
++------------+------------+
+| pankaj     | developers |
+| anil       | testing    |
+| pushpendra | deployment |
+| vulture    | testing    |
+| shadow     | developers |
++------------+------------+
+5 rows in set (0.13 sec)
