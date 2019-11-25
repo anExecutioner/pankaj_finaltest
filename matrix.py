@@ -2,10 +2,10 @@ import random
 def matrix(l):
     c=0
     z=[0]*10
-    print(z)
+    l[random.choice(l)] = 0
     while l!=z:
         for i in range(1,10):
-            if i == random.choice(l) and random.choice(l) != 0:
+            if i == random.choice(l) and l[random.choice(l)-1] != 0:
                 l[random.choice(l)-1] = 0
                 c+=1
             else:
