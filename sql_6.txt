@@ -1,0 +1,11 @@
+mysql> select salary/10+salary as salary ,emp_id,emp_name from employee;
++--------------+--------+------------+
+| salary       | emp_id | emp_name   |
++--------------+--------+------------+
+|  330000.0000 |      1 | pankaj     |
+|  495000.0000 |      2 | anil       |
+|  220000.0000 |      3 | pushpendra |
+|  660000.0000 |      4 | vulture    |
+| 1650000.0000 |      5 | shadow     |
++--------------+--------+------------+
+5 rows in set (0.00 sec)
