@@ -1,0 +1,32 @@
+mysql> select * from employee;
++--------+------------+---------+---------+-----------+
+| Emp_id | Emp_name   | salary  | Dept_id | phone     |
++--------+------------+---------+---------+-----------+
+|      1 | pankaj     |  300000 |       1 | 123456789 |
+|      2 | anil       |  450000 |       2 | 864384687 |
+|      3 | pushpendra |  200000 |       3 |  39249934 |
+|      4 | vulture    |  600000 |       2 |  39243334 |
+|      5 | shadow     | 1500000 |       1 |  39223434 |
++--------+------------+---------+---------+-----------+
+5 rows in set (0.00 sec)
+
+mysql> select * from department;
++---------+------------+
+| Dept_id | Dept_name  |
++---------+------------+
+|       1 | developers |
+|       2 | testing    |
+|       3 | deployment |
++---------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select a.Dept_ID,max(a.Salary) as salary from Employee a join (select MAX(salary) salary
+    -> from Employee group by Dept_ID) b on a.Salary < b.salary group by a.Dept_ID;
++---------+--------+
+| Dept_ID | salary |
++---------+--------+
+|       1 | 300000 |
+|       2 | 600000 |
+|       3 | 200000 |
++---------+--------+
+3 rows in set (0.00 sec)
